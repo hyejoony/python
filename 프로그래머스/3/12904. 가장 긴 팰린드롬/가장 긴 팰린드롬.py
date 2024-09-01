@@ -15,11 +15,13 @@ def solution(s):
                         end -= 1 # 더 작은 부분문자열을 만든다
                         break
 
-                else: #회문이면
-                    curr_len = end-start
-                    if curr_len > max_len:
-                        max_len = curr_len
-                        break
+                else: 
+                    max_len = end-start
+                    #회문이면
+                    # curr_len = end-start
+                    # if curr_len > max_len:
+                        # max_len = curr_len
+                    break
     
         return max_len
     answer = palin_check(s)
