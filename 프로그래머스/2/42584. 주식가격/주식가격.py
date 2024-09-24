@@ -1,24 +1,21 @@
-#큐
 from collections import deque
 
-
 def solution(prices):
-    prices = deque(prices)
-    answer = [] #출력 배열
-    while prices: #prices 리스트가 빌 때까지 반복 진행
-        a=prices.popleft() #첫번째꺼 빼서 리스트 크기 줄이고
+    price_q = deque(prices) #큐 변환
+    
+    answer = [] 
+    
+    while price_q: #대기 큐 빌 때까지
         cnt = 0 
-        for i in prices:
-            if a <= i:
-                cnt += 1
-
+        cur_price = price_q.popleft()
+        
+        for next_price in price_q:
+            cnt += 1
+            if cur_price <= next_price :
+                continue
             else:
-                cnt+= 1
                 break
-
-        answer.append(cnt )
-            
-                    
+        # 끝까지 떨어지지 않는 경우
+        answer.append(cnt) 
+    
     return answer
-
-
