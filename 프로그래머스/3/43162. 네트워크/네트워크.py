@@ -1,7 +1,7 @@
 from collections import deque
 
-G = [[] for _ in range(101)]
-vis = [False] * 101
+G = [[] for _ in range(100)]
+vis = [False] * 100
 
 def bfs(node):
 
